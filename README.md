@@ -1,109 +1,100 @@
-# 🌟 Mood Tracking App
+# Journal AI App
 
-> A modern mood tracking application that helps users monitor their emotional well-being through journaling. The app uses AI to analyze journal entries, providing sentiment analysis, mood tracking, and visual insights into emotional patterns over time.
+A modern journaling app that uses AI to analyze your entries and track your mood over time. Write honestly, and let AI help you understand your emotional patterns.
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.7-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-
-## 🚀 Live Demo
-
-Check out the [live demo of the project](https://fullstack-nextjs-journal-ai-app.vercel.app).
+[Live Demo](https://fullstack-nextjs-journal-ai-app.vercel.app)
 
 ![overview image](./public/overview.jpg)
 
-## ✨ Key Features
+## Features
 
-### 📝 Smart Journaling
+**Smart Journaling**
 
-- ✍️ Create and manage journal entries with real-time autosave
-- 🤖 AI-powered analysis of each entry including:
-  - 🎯 Mood detection
-  - 📌 Subject identification
-  - 📊 Sentiment scoring (-10 to 10 scale)
-  - 🎨 Automatic color coding based on emotional tone
-  - 📝 Concise summaries
+- Create and edit journal entries with autosave
+- AI analyzes each entry to detect mood, identify subjects, and score sentiment
+- Automatic color coding based on emotional tone
+- Concise summaries of your entries
 
-### 🎮 Interactive Dashboard
+**Visual Insights**
 
-- 🎨 Clean, modern interface with responsive design
-- ⚡ Real-time entry creation and editing
-- 📈 Visual mood history tracking
-- 📊 Sentiment trend analysis
-- 🎯 Average sentiment score calculation
+- Interactive charts showing mood trends over time
+- Historical sentiment analysis
+- Average sentiment score tracking
+- Color-coded entry cards for quick visual reference
 
-### 🧠 AI-Powered Insights
+**AI-Powered**
 
-- 🔍 Natural language processing for entry analysis
-- 💭 Smart question answering about your journal history
-- 🤖 Integration with multiple AI models (Groq and Gemini)
-- 📊 Automatic sentiment scoring and mood detection
+- Natural language processing for entry analysis
+- Ask questions about your journal history
+- Supports multiple AI models (Groq and Gemini via LangChain)
 
-### 📊 Data Visualization
+## Tech Stack
 
-- 📈 Interactive line charts showing mood trends
-- 🎨 Color-coded entries based on emotional tone
-- 📊 Historical sentiment analysis
-- 📈 Visual representation of emotional patterns
+- **Framework:** Next.js 15.3.2 with React 19
+- **Language:** TypeScript
+- **Database:** PostgreSQL with Prisma ORM
+- **Authentication:** Clerk
+- **AI:** LangChain, Google Gemini, Groq
+- **Charts:** Recharts
+- **Styling:** Tailwind CSS
+- **Validation:** Zod
 
-## 🛠️ Technical Stack
+## Getting Started
 
-| Category               | Technologies                        |
-| ---------------------- | ----------------------------------- |
-| **Frontend**           | Next.js 15.3.2 with React 19        |
-| **Backend**            | Serverless architecture with Prisma |
-| **Database**           | PostgreSQL with Prisma ORM          |
-| **Authentication**     | Clerk                               |
-| **AI Integration**     | LangChain, Google Gemini, Groq      |
-| **Data Visualization** | Recharts                            |
-| **Styling**            | Tailwind CSS                        |
-| **Validation**         | Zod                                 |
+1. Clone the repository:
 
-## 🚀 Getting Started
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/momensalama/fullstack-nextjs-journal-ai-app.git
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables:**
-
-   ```bash
-   # Create a .env file with the following variables
-   DATABASE_URL="your_database_url"
-   CLERK_SECRET_KEY="your_clerk_key"
-   GROQ_API_KEY="your_groq_key"
-   GEMINI_API_KEY="your_gemini_key"
-   ```
-
-4. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-## 📁 Project Structure
-
-```
-mood-app/
-├── app/              # Next.js application routes and components
-├── components/       # Reusable React components
-├── utils/           # Utility functions and AI integration
-├── prisma/          # Database schema and migrations
-└── public/          # Static assets
+```bash
+git clone https://github.com/momensalama/fullstack-nextjs-journal-ai-app.git
+cd fullstack-nextjs-journal-ai-app
 ```
 
-## 🤝 Contributing
+2. Install dependencies:
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+```bash
+npm install
+```
 
-## 📝 License
+3. Set up environment variables:
+   Create a `.env` file in the root directory:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```bash
+DATABASE_URL="your_postgresql_connection_string"
+CLERK_SECRET_KEY="your_clerk_secret_key"
+GROQ_API_KEY="your_groq_api_key"
+GEMINI_API_KEY="your_gemini_api_key"
+```
+
+4. Set up the database:
+
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
+
+5. Run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+├── app/                    # Next.js app router pages and layouts
+│   ├── (dashboard)/       # Protected dashboard routes
+│   ├── components/         # React components
+│   └── generated/          # Generated Prisma client
+├── prisma/                 # Database schema and migrations
+├── utils/                  # Utility functions and AI integration
+└── public/                 # Static assets
+```
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+
+MIT License - see LICENSE file for details.
